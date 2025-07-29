@@ -277,6 +277,35 @@
         max-width: 150px;
     }
         }
+
+        .abstract-toggle {
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .abstract-toggle::before {
+        content: "►";
+        display: inline-block;
+        margin-right: 5px;
+        transition: transform 0.3s;
+    }
+
+    .abstract-toggle.active::before {
+        transform: rotate(90deg);
+    }
+
+    .abstract-content {
+        display: none;
+        margin-left: 20px;
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #f8f8f8;
+        border-left: 3px solid #e0e0e0;
+    }
+
+    .abstract-content.show {
+        display: block;
+    }
     </style>
 </head>
 <body>
@@ -318,7 +347,24 @@
             <div class="section content">
                 <p><i>Dissertation</i></p>
                 <ul>
-                    <li><a href="intimacy-contract.pdf">Job Market Paper: The Intimacy Contract in Action</a>  (Jul 2025)</li>
+                    <li>
+            <div class="abstract-toggle">Job Market Paper: The Intimacy Contract in Action</div>
+            <div class="abstract-content">
+                <p>>How do states decide which intimate relationships are “family”? In India, relationships
+                outside legal, monogamous marriage lack legal standing. Yet appellate courts
+                sometimes extend legal entitlements to women in extramarital relationships. To understand
+                these patterns, I develop the Intimacy Contract: a conceptual framework
+                illuminating how states reward relationships resembling their ideological vision of marriage.
+                This framework addresses a blind spot in social science scholarship that neglects
+                how states extend and deny entitlements to relationships. Using large language models
+                (LLMs) with human oversight, I analyze 2,721 Indian appellate court cases from 2000
+                to 2024. I find that when relationships exhibit a conjugal life, a traditional gender dynamic,
+                and shared religiosity, courts grant recognition in 56 percent of cases and when
+                these are absent, the rate drops to 22 percent. This stark difference reflects a broader
+                ideological logic through which states, across various contexts, regulate intimate life.</p
+            </div>
+            <span class="date">(Jul 2025)</span>
+        </li>
                     <li>Book Project: The Intimacy Contract (expected: Jul 2026)</li>
                 </ul>
                 
@@ -353,5 +399,14 @@
             </div>
         </div>
     </div>
+    <script>
+    document.querySelectorAll('.abstract-toggle').forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            toggle.classList.toggle('active');
+            const content = toggle.nextElementSibling;
+            content.classList.toggle('show');
+        });
+    });
+</script>
 </body>
 </html>
