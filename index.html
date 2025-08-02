@@ -139,11 +139,29 @@
         }
 
         .left-rail {
-            width: 150px;
+            width: 200px;  /* Increased to accommodate photo */
             flex-shrink: 0;
             position: sticky;
             top: 30px;
             margin-top: 7.5em; /* This aligns with the main heading */
+        }
+
+        .left-rail .profile-photo {
+            margin-bottom: 2em;
+        }
+
+        .left-rail .profile-photo img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 0.5em;
+        }
+
+        .left-rail .photo-caption {
+            font-size: 0.85em;
+            font-style: italic;
+            color: #5c4236;
+            margin-bottom: 1em;
         }
 
         .left-rail ul {
@@ -329,6 +347,9 @@
 <body>
     <div class="container">
         <nav class="left-rail">
+            <div class="profile-photo">
+                <img src="https://i.ibb.co/2Y7sS0cm/PHOTO-2025-08-01-17-22-36-2.jpg" alt="Chetana Sabnis" style="max-width: 200px; border-radius: 5px; margin-bottom: 0.5em;">
+            </div>
             <ul>
                 <li><a href="#about-me">About Me</a></li>
                 <li><a href="#dissertation">Dissertation</a></li>
@@ -340,15 +361,10 @@
         <div class="main-content" role="main">
             <h1>Chetana Sabnis</h1>
 
-            <div class="profile-photo">
-        <img src="https://i.ibb.co/nsSXcJMh/IMG-2203.jpg" alt="Chetana Sabnis" style="max-width: 200px; border-radius: 5px; margin-bottom: 0.5em;">
-        <div class="photo-caption">A not-staged-at-all picture of Chetana at work</div>
-    </div>
-
             <h2 id="about-me">About Me</h2>
     
             <div class="section intro">
-                <p> Welcome! I am a Ph.D. candidate in Political Science at Yale University. My research focuses on how states regulate intimate relationships and construct hierarchies of familial belonging.</p>
+                <p> Welcome! I am a Ph.D. candidate in Political Science at Yale University. My research focuses on how states regulate intimate relationships and construct hierarchies of familial belonging. I am advised by Elisabeth Wood, Joe Fischel, Dara Strolovitch and Egor Lazarev. </p>
                 
                 <p>I am interested in the ambiguities of everyday life. In my research, this has meant exploring the politics of intimacy, law and society intersections, and feminist and critical theory. Outside of work, this has meant an enduring interest for celebrity gossip, literary fiction and reality TV. </p>
                 
