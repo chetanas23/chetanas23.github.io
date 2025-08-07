@@ -264,29 +264,30 @@
             .left-rail {
                 width: 100%;
                 position: static;
-                margin-bottom: 6px;
-                order: 2;  /* This moves the left-rail after the main content */
+                order: 2;
             }
 
-            .container {
-                margin: 0;
-                padding-top: 0;
-                flex-direction: column;
-                gap: 1px;
-            }
-
-            .main-content {
-                order: 1;  /* This ensures main content appears first */
-            }
-
-            .profile-photo {
-        max-width: 200px;
-        margin: 2em 0;
+            .left-rail .profile-photo {
+        width: 200px;  /* Fixed width for mobile */
+        margin: 2em auto;  /* Center the photo container */
+        display: block;  /* Ensure block display */
     }
 
-    .profile-photo img {
+    .left-rail .profile-photo img {
         width: 100%;
         height: auto;
+        display: block;  /* Ensure block display */
+        margin: 0 auto;  /* Center the image */
+    }
+
+    .container {
+        flex-direction: column;
+        padding: 1em;
+    }
+
+    .main-content {
+        order: 1;
+        width: 100%;
     }
         }
 
