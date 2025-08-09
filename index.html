@@ -101,12 +101,14 @@
         .container > ul {
             margin-top: 0;
             padding-top: 0;
-            margin: 0;  /* Remove default margin */
-            padding: 0.5rem 0;  /* Add minimal padding */
+            margin: 0;
+            padding: 0.5rem 0;
             display: flex;
             flex-wrap: wrap;
-            gap: 0.25rem 0.25rem;  /* Add small gaps between nav items */
-            font-size: 1rem;  /* Slightly smaller font size */
+            justify-content: space-between; /* Added this to distribute items evenly */
+            width: 100%; /* Added this to ensure full width */
+            gap: 0.25rem 0.25rem;
+            font-size: 1rem;
             margin-bottom: 1rem;
         }
 
@@ -216,20 +218,19 @@
         width: 100%;
         display: flex;
         flex-direction: row;
-        justify-content: space-between; /* Changed from center to space-between */
-        flex-wrap: nowrap; /* Prevent wrapping */
-        padding: 0 20px; /* Add some horizontal padding */
+        justify-content: space-between;
+        flex-wrap: wrap; /* Changed from nowrap to wrap */
+        padding: 0 10px; /* Reduced horizontal padding */
         margin-bottom: 2em;
     }
 
     .left-rail li {
         margin: 0;
-        font-size: 0.9em; /* Slightly smaller font size */
-    }
-
-    .left-rail a {
-        white-space: nowrap; /* Prevent text wrapping */
-        padding: 0 5px; /* Add some spacing between links */
+        font-size: 0.9em;
+        flex: 1; /* Added to distribute space evenly */
+        text-align: center; /* Center the text */
+        min-width: max-content; /* Ensure text doesn't break */
+        padding: 0 5px; /* Add some spacing between items */
     }
     
     h1 {
