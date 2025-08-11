@@ -199,66 +199,57 @@
     .container {
         display: flex;
         flex-direction: column;
+        align-items: center;  /* Center all content */
         padding: 20px;
         margin: 0;
+        text-align: center;  /* Center text content */
     }
 
     .left-rail {
         display: flex;
         flex-direction: column;
+        align-items: center;  /* Center navigation items */
         width: 100%;
         position: static;
         margin: 0;
     }
 
-    .left-rail ul {
-        order: 1;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        flex-wrap: nowrap; /* Change to nowrap to keep items in one line */
-        padding: 0 5px; /* Reduce padding */
-        margin-bottom: 2em;
-        overflow-x: auto; /* Allow horizontal scrolling if needed */
-        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-    }
-
-    .left-rail li {
-        margin: 0;
-        font-size: 0.85em; /* Slightly reduce font size */
-        white-space: nowrap; /* Prevent text wrapping */
-        padding: 0 8px; /* Add some spacing between items */
-        flex-shrink: 0; /* Prevent items from shrinking */
-    }
-
-    .left-rail li a {
-        display: block;
-        padding: 5px 0;
-    }
-    
     h1 {
-        order: 2;  /* Name second */
+        order: 1;  /* Name first */
+        width: 100%;
         text-align: center;
         margin: 1em 0;
     }
 
     .profile-photo {
-        order: 3;  /* Photo third */
+        order: 2;  /* Photo second */
         width: 200px;
         margin: 1em auto;
     }
 
-    .profile-photo img {
+    .left-rail ul {
+        order: 3;  /* Navigation third */
         width: 100%;
-        height: auto;
-        display: block;
-        border-radius: 5px;
+        display: flex;
+        flex-wrap: wrap;  /* Allow items to wrap */
+        justify-content: center;
+        gap: 1em;
+        margin: 1em 0;
+        padding: 0;
+    }
+
+    .left-rail li {
+        flex: 0 0 calc(50% - 1em);  /* Two items per row */
+        text-align: center;
+        margin: 0.5em 0;
+        font-size: 0.9em;
+        white-space: nowrap;
     }
 
     .main-content {
-        order: 4;  /* Main content last */
+        order: 4;
         width: 100%;
+        text-align: left;  /* Keep main content left-aligned */
     }
 }
 
