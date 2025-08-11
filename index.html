@@ -217,18 +217,24 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        flex-wrap: wrap; /* Changed from nowrap to wrap */
-        padding: 0 10px; /* Reduced horizontal padding */
+        flex-wrap: nowrap; /* Change to nowrap to keep items in one line */
+        padding: 0 5px; /* Reduce padding */
         margin-bottom: 2em;
+        overflow-x: auto; /* Allow horizontal scrolling if needed */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
     }
 
     .left-rail li {
         margin: 0;
-        font-size: 0.9em;
-        flex: 1; /* Added to distribute space evenly */
-        text-align: center; /* Center the text */
-        min-width: max-content; /* Ensure text doesn't break */
-        padding: 0 5px; /* Add some spacing between items */
+        font-size: 0.85em; /* Slightly reduce font size */
+        white-space: nowrap; /* Prevent text wrapping */
+        padding: 0 8px; /* Add some spacing between items */
+        flex-shrink: 0; /* Prevent items from shrinking */
+    }
+
+    .left-rail li a {
+        display: block;
+        padding: 5px 0;
     }
     
     h1 {
@@ -335,7 +341,7 @@
                 <div class="section content">
                 <h2 id="dissertation">Dissertation</h2>
                 
-                <p>My PhD dissertation introduces the <i>Intimacy Contract</i>, a framework that illuminates how some intimate relationships receive legal entitlements while others are rendered dispensable. This dynamic becomes visible when we compare officially recognized intimate relationships such as marriages and parent-child relationships to relationships that are arguably as intimate, such as friendships (like in Elena Ferante's <a href="https://www.newyorker.com/books/page-turner/elena-ferrante-liking-like">My Brilliant</a> Friend) and human-animal relationships (like the ones captured in Mary Oliver's <a href="https://www.themarginalian.org/2013/11/12/mary-oliver-dog-songs/">Dog Songs</a>). Although these relationships may broadly be comparable in how intimate they are, the state draws an ideological boundary between those it classifies as "family" and those it does not.</p>
+                <p>My PhD dissertation introduces the <i>Intimacy Contract</i>, a framework that illuminates how some intimate relationships receive legal entitlements while others are rendered dispensable. This dynamic becomes visible when we compare officially recognized intimate relationships such as marriages and parent-child relationships to relationships that are arguably as intimate, such as friendships (like in Elena Ferante's <a href="https://www.newyorker.com/books/page-turner/elena-ferrante-liking-like">My Brilliant Friend</a>) and human-animal relationships (like the ones described in Mary Oliver's <a href="https://www.themarginalian.org/2013/11/12/mary-oliver-dog-songs/">Dog Songs</a>). Although these relationships may broadly be comparable in how intimate they are, the state draws an ideological boundary between those it classifies as "family" and those it does not.</p>
                 
                 <p>I grew interested in this topic during my three months in the British Library archives in 2022 in London where I studied the lives of British colonial officials. Their documents suggested that they had intimate relationships with 'local' Indian women but never explicitly referred to them as 'family.' I became more curioius about this dynamic the more content I read on these shadow intimacies like Saba Dewan's <a href="https://asianreviewofbooks.com/tawaifnama-by-saba-dewan/">Tawaifnama</a>, a rich microhistory of the lives of courtesans in North India, <a href="https://www.newyorker.com/magazine/2024/01/01/american-poly-christopher-gleason-book-review-more-a-memoir-of-open-marriage-molly-roden-winter"> Jennifer Wilson's New Yorker article on Polyamory </a>, and <a href="https://www.dukeupress.edu/reckoning-with-slavery">Jennifer Morgan's Reckoning with Slavery</a>, which offers a piercing view into intimate relationships under racial captialism.</p>
                 
