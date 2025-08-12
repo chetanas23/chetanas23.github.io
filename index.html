@@ -202,62 +202,61 @@
            scroll-behavior: smooth;
         }
 
+        .desktop-only {
+            display: block;
+        }
+        
+        .mobile-only {
+            display: none;
+        }
+
         @media (max-width: 768px) {
-    .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-        margin: 0;
-    }
+            .container {
+                flex-direction: column;
+                padding: 20px;
+                margin: 0;
+            }
 
-    .left-rail {
-        display: contents;  /* This makes its children participate in the parent's flex context */
-        width: 100%;
-        margin: 0;
-        padding: 0;
-    }
+            .desktop-only {
+                display: none;
+            }
 
-    .main-content {
-        width: 100%;
-    }
+            .mobile-only {
+                display: block;
+            }
 
-    .main-content h1 {
-        width: 100%;
-        text-align: center;
-        margin: 0.5em 0;
-        font-weight: bold;
-        order: 1;
-    }
+            .main-content {
+                width: 100%;
+            }
 
-    .profile-photo {
-        width: 200px;
-        margin: 1em auto;
-        order: 2;
-    }
+            .main-content h1 {
+                width: 100%;
+                text-align: center;
+                margin: 0.5em 0;
+                font-weight: bold;
+            }
 
-    .profile-photo img {
-        width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-        border-radius: 5px;
-    }
+            .profile-photo {
+                width: 200px;
+                margin: 1em auto 2em;
+            }
 
-    .main-content > *:not(h1) {
-        order: 3;
-        width: 100%;
-        text-align: left;
-    }
+            .profile-photo img {
+                width: 100%;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+                border-radius: 5px;
+            }
 
-    /* Ensure proper spacing between sections */
-    .section {
-        margin-top: 2em;
-    }
+            .left-rail {
+                display: none;
+            }
 
-    #about-me {
-        margin-top: 2em;
-    }
+            #about-me {
+                margin-top: 1em;
+            }
+        }
 }
 
         .abstract-toggle {
@@ -309,14 +308,18 @@
 </head>
 <body>
     <div class="container">
-        <nav class="left-rail">
-            <div class="profile-photo">
-                <img src="https://i.ibb.co/2Y7sS0cm/PHOTO-2025-08-01-17-22-36-2.jpg" alt="Chetana Sabnis" style="max-width: 200px; border-radius: 5px; margin-bottom: 0.5em;">
-            </div>
-        </nav>
-    
         <div class="main-content" role="main">
             <h1>Chetana Sabnis</h1>
+            
+            <div class="profile-photo mobile-only">
+                <img src="https://i.ibb.co/2Y7sS0cm/PHOTO-2025-08-01-17-22-36-2.jpg" alt="Chetana Sabnis" style="max-width: 200px; border-radius: 5px; margin-bottom: 0.5em;">
+            </div>
+
+            <nav class="left-rail">
+                <div class="profile-photo desktop-only">
+                    <img src="https://i.ibb.co/2Y7sS0cm/PHOTO-2025-08-01-17-22-36-2.jpg" alt="Chetana Sabnis" style="max-width: 200px; border-radius: 5px; margin-bottom: 0.5em;">
+                </div>
+            </nav>
 
             <h2 id="about-me">About Me</h2>
     
