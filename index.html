@@ -152,6 +152,7 @@
 
         .left-rail .profile-photo {
             margin-bottom: 2em;
+            max-width: 200px;
         }
 
         .left-rail .profile-photo img {
@@ -159,6 +160,7 @@
             height: auto;
             border-radius: 5px;
             margin-bottom: 0.5em;
+            display: block;
         }
 
         .left-rail .photo-caption {
@@ -209,8 +211,14 @@
         margin: 0;
     }
 
+    .left-rail {
+        display: contents;  /* This makes its children participate in the parent's flex context */
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
     .main-content {
-        order: 1;
         width: 100%;
     }
 
@@ -219,21 +227,13 @@
         text-align: center;
         margin: 0.5em 0;
         font-weight: bold;
-    }
-
-    .left-rail {
-        position: static;  /* Remove sticky positioning */
-        order: 2;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        margin-top: 1em;  /* Add space after heading */
+        order: 1;
     }
 
     .profile-photo {
         width: 200px;
-        margin: 0 auto;
-        position: static;  /* Remove any fixed positioning */
+        margin: 1em auto;
+        order: 2;
     }
 
     .profile-photo img {
@@ -241,13 +241,22 @@
         height: auto;
         display: block;
         margin: 0 auto;
+        border-radius: 5px;
     }
 
     .main-content > *:not(h1) {
         order: 3;
         width: 100%;
         text-align: left;
-        margin-top: 2em;  /* Add space after photo */
+    }
+
+    /* Ensure proper spacing between sections */
+    .section {
+        margin-top: 2em;
+    }
+
+    #about-me {
+        margin-top: 2em;
     }
 }
 
