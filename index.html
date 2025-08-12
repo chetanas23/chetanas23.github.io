@@ -146,6 +146,8 @@
             position: sticky;
             top: 30px;
             margin-top: 7.5em; /* This aligns with the main heading */
+            display: flex;
+            flex-direction: column;
         }
 
         .left-rail .profile-photo {
@@ -171,19 +173,22 @@
             padding: 0;
             margin: 0;
             display: flex;
-            flex-wrap: nowrap;  /* Prevent wrapping */
-            justify-content: space-between;
+            flex-direction: column; /* Make navigation vertical */
             width: 100%;
+            gap: 1em; /* Add space between nav items */
         }
 
         .left-rail li {
-            margin-bottom: 1px;
-            white-space: nowrap;  /* Prevent text wrapping */
-            margin-right: 15px;  /* Add some space between items */
+            margin: 0;
+            padding: 0;
+            white-space: nowrap;
+            width: 100%; /* Take full width of container */
         }
 
-        .left-rail li:last-child {
-            margin-right: 0;  /* Remove margin from last item */
+        .left-rail li a {
+            display: block;
+            padding: 0.5em 0;
+            text-decoration: none;
         }
 
         .main-content {
