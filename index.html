@@ -92,10 +92,18 @@
             margin-top: 0;
         }
 
+        .desktop-only {
+            display: block;
+        }
+        
+        .mobile-only {
+            display: none;
+        }
+
         .container ul li {
             margin-top: 0;
             padding-top: 0;
-            margin-bottom: 0.05em;  /* Adjust this value for spacing */
+            margin-bottom: 0.05em;
         }
 
         .container > ul {
@@ -105,8 +113,8 @@
             padding: 0.5rem 0;
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between; /* Added this to distribute items evenly */
-            width: 100%; /* Added this to ensure full width */
+            justify-content: space-between;
+            width: 100%;
             gap: 0.25rem 0.25rem;
             font-size: 1rem;
             margin-bottom: 1rem;
@@ -115,7 +123,7 @@
         .container > ul > li {
             margin-top: 0;
             padding-top: 0;
-            margin: 0;  /* Remove default margin */
+            margin: 0;
             list-style: none;
         }
 
@@ -135,17 +143,16 @@
             padding-left: 1.5rem;
         }
 
-
         .section.content ul li {
             margin-bottom: 0.5rem;
         }
 
         .left-rail {
-            width: 200px;  /* Increased to accommodate photo */
+            width: 200px;
             flex-shrink: 0;
             position: sticky;
             top: 30px;
-            margin-top: 7.5em; /* This aligns with the main heading */
+            margin-top: 7.5em;
             display: flex;
             flex-direction: column;
         }
@@ -202,14 +209,6 @@
            scroll-behavior: smooth;
         }
 
-        .desktop-only {
-            display: block;
-        }
-        
-        .mobile-only {
-            display: none;
-        }
-
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
@@ -247,10 +246,6 @@
                 display: block;
                 margin: 0 auto;
                 border-radius: 5px;
-            }
-
-            .left-rail {
-                display: none;
             }
 
             #about-me {
@@ -308,18 +303,18 @@
 </head>
 <body>
     <div class="container">
+        <nav class="left-rail desktop-only">
+            <div class="profile-photo">
+                <img src="https://i.ibb.co/2Y7sS0cm/PHOTO-2025-08-01-17-22-36-2.jpg" alt="Chetana Sabnis" style="max-width: 200px; border-radius: 5px; margin-bottom: 0.5em;">
+            </div>
+        </nav>
+    
         <div class="main-content" role="main">
             <h1>Chetana Sabnis</h1>
             
             <div class="profile-photo mobile-only">
                 <img src="https://i.ibb.co/2Y7sS0cm/PHOTO-2025-08-01-17-22-36-2.jpg" alt="Chetana Sabnis" style="max-width: 200px; border-radius: 5px; margin-bottom: 0.5em;">
             </div>
-
-            <nav class="left-rail">
-                <div class="profile-photo desktop-only">
-                    <img src="https://i.ibb.co/2Y7sS0cm/PHOTO-2025-08-01-17-22-36-2.jpg" alt="Chetana Sabnis" style="max-width: 200px; border-radius: 5px; margin-bottom: 0.5em;">
-                </div>
-            </nav>
 
             <h2 id="about-me">About Me</h2>
     
