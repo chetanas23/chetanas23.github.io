@@ -258,8 +258,9 @@
     cursor: pointer;
     user-select: none;
     position: relative;
-    margin-left: -1.5em;  /* Pull back to align with bullets */
-    padding-left: 1.5em;  /* Add padding to maintain text position */
+    padding-left: 1.2em;  /* Reduced padding */
+    display: block;
+    margin: 0.5em 0;  /* Add vertical spacing */
 }
 
 .abstract-toggle::before {
@@ -267,7 +268,9 @@
     position: absolute;
     left: 0;
     display: inline-block;
-    margin-right: 5px;
+    margin-right: 8px;
+    font-size: 0.8em;  /* Make the arrow slightly smaller */
+    line-height: 1.6;  /* Align arrow vertically with text */
     transition: transform 0.3s;
 }
 
@@ -293,12 +296,23 @@
         display: block;
     }
 
+    .abstract-list {
+        list-style: none !important;
+        padding-left: 0 !important;
+        margin: 1em 0 !important;
+    }
+
+    .abstract-list li {
+        padding: 0;
+        margin: 0.5em 0;
+    }
+
     .photo-caption {
-    font-size: 0.85em;
-    font-style: italic;
-    color: #5c4236;  /* Medium brown for captions */
-    margin-bottom: 2em;
-}
+        font-size: 0.85em;
+        font-style: italic;
+        color: #5c4236;  /* Medium brown for captions */
+        margin-bottom: 2em;
+    }
     </style>
 </head>
 <body>
@@ -331,14 +345,14 @@
                 <div class="section content">
                 <h2 id="dissertation">Dissertation</h2>
                 
-                <p>My PhD dissertation introduces the <i>Intimacy Contract</i>, a framework that illuminates how some intimate relationships receive legal entitlements while others are rendered dispensable. This dynamic becomes visible when we compare officially recognized intimate relationships such as marriages and parent-child relationships to relationships that are arguably as intimate, such as friendships (like in Elena Ferante's <a href="https://www.newyorker.com/books/page-turner/elena-ferrante-liking-like">My Brilliant Friend</a>) and human-animal relationships (like the ones described in Mary Oliver's <a href="https://www.themarginalian.org/2013/11/12/mary-oliver-dog-songs/">Dog Songs</a>). Although these relationships may broadly be comparable in how intimate they are, the state draws an ideological boundary between those it classifies as "family" and those it does not.</p>
+                <p>My dissertation introduces the <i>Intimacy Contract</i>, a framework that illuminates how some intimate relationships receive legal entitlements while others are rendered dispensable. This dynamic becomes visible when we compare officially recognized intimate relationships such as marriages and parent-child relationships to relationships that are arguably as intimate, such as friendships (like in Elena Ferante's <a href="https://www.newyorker.com/books/page-turner/elena-ferrante-liking-like">My Brilliant Friend</a>) and human-animal relationships (like the ones described in Mary Oliver's <a href="https://www.themarginalian.org/2013/11/12/mary-oliver-dog-songs/">Dog Songs</a>). Although these relationships may broadly be comparable in how intimate they are, the state draws an ideological boundary between those it classifies as "family" and those it does not.</p>
                 
                 <p>I grew interested in this topic during my three months in the British Library archives in 2022 in London where I studied the lives of British colonial officials. Their documents suggested that they had intimate relationships with 'local' Indian women but never explicitly referred to them as 'family.' I became more curioius about this dynamic the more content I read on these shadow intimacies like Saba Dewan's <a href="https://asianreviewofbooks.com/tawaifnama-by-saba-dewan/">Tawaifnama</a>, a rich microhistory of the lives of courtesans in North India, <a href="https://www.newyorker.com/magazine/2024/01/01/american-poly-christopher-gleason-book-review-more-a-memoir-of-open-marriage-molly-roden-winter"> Jennifer Wilson's New Yorker article on Polyamory </a>, and <a href="https://www.dukeupress.edu/reckoning-with-slavery">Jennifer Morgan's Reckoning with Slavery</a>, which offers a piercing view into intimate relationships under racial captialism.</p>
                 
                 <p>My research involves a combination of computational, qualitative, and quantitative methods to study extramarital relationships in India and non-biological caregiving in the U.S. I've recently started using LLMs, and increasingly believe it can be a powerful aid to research in the social sciences.</p>
 
-                <ul>
-                    <li style="list-style-type: none;">
+                <ul class="abstract-list">
+                    <li>
                         <div class="abstract-toggle">Job Market Paper: The Intimacy Contract in Action (Jul 2025)</div>
                         <div class="abstract-content">
                             <p>How do states decide which intimate relationships are "family"? In India, relationships outside legal, monogamous marriage lack legal standing. Yet appellate courts sometimes extend spousal entitlements to women in extramarital relationships. To understand this puzzle, I develop the Intimacy Contract: a conceptual framework illuminating how states reward relationships resembling their ideological vision of marriage. This framework addresses a blind spot in social science scholarship that neglects how states extend and deny entitlements to relationships. Using large language models (LLMs) with human oversight, I analyze 2,721 Indian appellate court cases from 2000 to 2024. I find that when relationships resemble the state's ideal marriage - a conjugal life, a traditional gender dynamic, and shared religiosity -, courts grant recognition in 56 percent of cases and when these are absent, the rate drops to 22 percent. This stark difference reflects a broader ideological logic through which states regulate intimate life.</p>
