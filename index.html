@@ -207,7 +207,6 @@
         align-items: center;
         padding: 20px;
         margin: 0;
-        text-align: center;
     }
 
     h1 {
@@ -218,16 +217,32 @@
         font-weight: bold;
     }
 
-    .profile-photo {
+    .left-rail {
+        position: static;  /* Remove sticky positioning */
         order: 2;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .profile-photo {
         width: 200px;
         margin: 1em auto;
+        position: static;  /* Remove any fixed positioning */
+    }
+
+    .profile-photo img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
     }
 
     .main-content {
         order: 3;
         width: 100%;
         text-align: left;
+        margin-top: 2em;  /* Add space after photo */
     }
 }
 
