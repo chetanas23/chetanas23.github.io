@@ -10,11 +10,47 @@
          body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             max-width: 900px;
-            margin: 0;
+            margin: 0 auto;
             padding: 0 20px;
             line-height: 1.6;
-            color: #2b1810;  /* Dark brown for main text */
-            font-size: 0.95em;  /* Slightly smaller base font size */
+            color: #2b1810;
+            font-size: 0.95em;
+        }
+
+        /* Navigation Bar Styles */
+        .nav-bar {
+            background-color: #fff;
+            padding: 1em 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 2em;
+        }
+
+        .nav-bar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 2em;
+        }
+
+        .nav-bar li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-bar a {
+            text-decoration: none;
+            color: #2b1810;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-bar a:hover {
+            color: cornflowerblue;
         }
 
         h1 {
@@ -90,6 +126,28 @@
             padding: 5px;
             padding-top: 0;
             margin-top: 0;
+        }
+
+        .about-section {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            margin-bottom: 2em;
+        }
+
+        .profile-content {
+            flex: 1;
+        }
+
+        .profile-photo-desktop {
+            width: 200px;
+            flex-shrink: 0;
+        }
+
+        .profile-photo-desktop img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
         }
 
         .desktop-only {
@@ -216,14 +274,6 @@
                 margin: 0;
             }
 
-            .desktop-only {
-                display: none;
-            }
-
-            .mobile-only {
-                display: block;
-            }
-
             .main-content {
                 width: 100%;
             }
@@ -235,45 +285,51 @@
                 font-weight: bold;
             }
 
-            .profile-photo {
-                width: 85%;  /* Percentage of screen width */
-                max-width: 300px;  /* Maximum width */
-                margin: 1em auto 2em;
+            .about-section {
+                flex-direction: column;
             }
 
-            .profile-photo img {
+            .profile-photo-desktop {
                 width: 100%;
-                height: auto;
-                display: block;
+                max-width: 400px;
                 margin: 0 auto;
-                border-radius: 5px;
             }
 
-            #about-me {
-                margin-top: 1em;
+            .nav-bar ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 1em;
+            }
+
+            .abstract-toggle {
+                padding-left: 1.5em;
+            }
+
+            .abstract-content {
+                margin-left: 1.5em;
             }
         }
 }
 
         .abstract-toggle {
-    cursor: pointer;
-    user-select: none;
-    position: relative;
-    padding-left: 1.2em;  /* Reduced padding */
-    display: block;
-    margin: 0.5em 0;  /* Add vertical spacing */
-}
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            padding-left: 2em;
+            display: block;
+            margin: 0.5em 0;
+        }
 
-.abstract-toggle::before {
-    content: "►";
-    position: absolute;
-    left: 0;
-    display: inline-block;
-    margin-right: 8px;
-    font-size: 0.8em;  /* Make the arrow slightly smaller */
-    line-height: 1.6;  /* Align arrow vertically with text */
-    transition: transform 0.3s;
-}
+        .abstract-toggle::before {
+            content: "►";
+            position: absolute;
+            left: 0.5em;
+            display: inline-block;
+            margin-right: 8px;
+            font-size: 0.8em;
+            line-height: 1.6;
+            transition: transform 0.3s;
+        }
 
     .abstract-toggle.active::before {
         transform: rotate(90deg);
@@ -317,30 +373,33 @@
     </style>
 </head>
 <body>
+    <nav class="nav-bar">
+        <ul>
+            <li><a href="#dissertation">Dissertation</a></li>
+            <li><a href="#other-research">Other Research</a></li>
+            <li><a href="#teaching">Teaching</a></li>
+        </ul>
+    </nav>
+
     <div class="container">
-        <nav class="left-rail desktop-only">
-            <div class="profile-photo">
-                <img src="https://i.ibb.co/2Y7sS0cm/PHOTO-2025-08-01-17-22-36-2.jpg" alt="Chetana Sabnis" style="max-width: 200px; border-radius: 5px; margin-bottom: 0.5em;">
-            </div>
-        </nav>
     
         <div class="main-content" role="main">
             <h1>Chetana Sabnis</h1>
             
-            <div class="profile-photo mobile-only">
-                <img src="https://i.ibb.co/2Y7sS0cm/PHOTO-2025-08-01-17-22-36-2.jpg" alt="Chetana Sabnis" style="max-width: 200px; border-radius: 5px; margin-bottom: 0.5em;">
-            </div>
-
-            <h2 id="about-me">About Me</h2>
-    
-            <div class="section intro">
-                <p> Welcome! I am a Ph.D. candidate in Political Science at Yale University. My research focuses on how states regulate intimate relationships and construct hierarchies of familial belonging. I am advised by <a href="https://campuspress.yale.edu/elisabethwood/">Elisabeth Wood</a>, <a href="https://wgss.yale.edu/people/joseph-fischel">Joe Fischel</a>, <a href="https://isps.yale.edu/team/dara-strolovitch">Dara Strolovitch</a> and <a href="https://egorlazarev.com/">Egor Lazarev</a>. </p>
+            <div class="about-section">
+                <div class="profile-content">
+                    <p>Welcome! I am a Ph.D. candidate in Political Science at Yale University. My research focuses on how states regulate intimate relationships and construct hierarchies of familial belonging. I am advised by <a href="https://campuspress.yale.edu/elisabethwood/">Elisabeth Wood</a>, <a href="https://wgss.yale.edu/people/joseph-fischel">Joe Fischel</a>, <a href="https://isps.yale.edu/team/dara-strolovitch">Dara Strolovitch</a> and <a href="https://egorlazarev.com/">Egor Lazarev</a>. </p>
                 
                 <p>I am interested in the ambiguities of everyday life. In my research, this has meant exploring the politics of intimacy, law and society intersections, and feminist and critical theory. Outside of work, this has meant an enduring interest for celebrity gossip, literary fiction and reality TV. </p>
                 
                 <p>Prior to Yale, I received an M.A. in Social Sciences from the University of Chicago and an integrated M.A. in Development Studies from IIT Madras. I grew up in Bangalore and now live in Brooklyn with my dog, daughter and partner. </p><p>
                     
-                </p>See my <a href="CV_Sabnis.pdf" target="_blank">CV</a> for more on my professional and academic life. </p>
+                    <p>See my <a href="CV_Sabnis.pdf" target="_blank">CV</a> for more on my professional and academic life.</p>
+                </div>
+                
+                <div class="profile-photo-desktop">
+                    <img src="https://i.ibb.co/2Y7sS0cm/PHOTO-2025-08-01-17-22-36-2.jpg" alt="Chetana Sabnis">
+                </div>
             </div>
     
                 <div class="section content">
