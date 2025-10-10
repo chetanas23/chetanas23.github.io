@@ -37,25 +37,19 @@
         }
 
         .back-link {
-            position: fixed;
-            left: 1rem;
-            /* respect device safe area (iPhone home indicator) */
-            bottom: env(safe-area-inset-bottom, 1.25rem);
+            /* In-flow link positioned at the end of the document (footer). */
+            position: static;
+            display: inline-block;
             color: inherit;
             text-decoration: underline;
             text-decoration-color: cornflowerblue;
             text-underline-offset: 3px;
             background: #faf7f5;
-            padding: 0.5em 0.9em;
+            padding: 0.45em 0.85em;
             border-radius: 6px;
             font-size: 0.95em;
-            box-shadow: 0 2px 6px rgba(43,24,16,0.08);
-            z-index: 1100;
-            /* compositing hints to reduce jank when mobile browser chrome shows/hides */
-            transform: translateZ(0);
-            -webkit-transform: translateZ(0);
-            backface-visibility: hidden;
-            will-change: transform, opacity;
+            box-shadow: 0 1px 4px rgba(43,24,16,0.06);
+            margin-top: 1.5rem;
         }
         .back-link:hover {
             text-decoration-color: cornflowerblue;
@@ -68,7 +62,7 @@
 </head>
 <body>
     <a href="index.html" class="back-link">← Back to main page</a>
-    <h1>The Intimacy Contract: States and Hierarchies of Familial Belonging</h1>
+        <h1>The Intimacy Contract: States and Hierarchies of Familial Belonging</h1>
     <div class="abstract" role="complementary" aria-label="Abstract">
         <p>How do states determine which intimate relationships count as "family"? Why do some relationships receive legal entitlements - such as custody, inheritance, or domestic violence protection - while others, emotionally and materially similar, are excluded? This dissertation introduces the <i>Intimacy Contract</i>, a novel conceptual framework that illuminates how states selectively recognize and protect certain intimate relationships while dismissing others, based on an ideological vision of family.</p>
         <p>I develop this framework through two empirical cases, both involving relationships that lack default legal recognition but where individuals nonetheless seek state rights and protections.</p>
@@ -77,6 +71,7 @@
         <p>Methodologically, I use a mixed-method approach that combines computational, quantitative and qualitative tools. I employ large language models (LLMs) to classify thousands of court judgments, identifying semantically nuanced case details that traditional pattern matching approaches tend to miss. These classifications are validated through a human-in-the-loop strategy involving iterative prompt refinement, random sampling, and coding safeguards. I then interpret the resulting patterns through statistical modeling, close readings of select cases, and interviews with legal practitioners and scholars.</p>
         <p>By centering relationships as the unit of analysis, this project offers a novel account of state power that reveals its reach into the seemingly private realm of intimate relationships: the family. Focusing on the family reveals a system of power that is not reducible to gender, race, class or sexuality. Instead, it illuminates a system where some intimate relationships are protected over others through an ideological vision that defines what it means to belong in society.</p>
     </div>
+        <a href="index.html" class="back-link">← Back to main page</a>
 
 
     <!-- Back to main page link moved to top right -->
