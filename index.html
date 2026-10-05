@@ -398,6 +398,17 @@
         margin-bottom: 0.25em;
     }
 
+    .paper-meta {
+        font-size: 0.9em;
+        color: #5c4236;
+        margin-bottom: 0.25em;
+    }
+
+    .paper-meta .sep {
+        color: #d4c4bc;
+        margin: 0 0.5em;
+    }
+
     .paper-status {
         font-size: 0.85em;
         color: #5c4236;
@@ -478,31 +489,33 @@
             </div>
 
             <div class="paper">
-                <div class="paper-title">The Price of Monogamy</div>
+                <div class="paper-title">The Price of Monogamy: Ideological Exclusion of Extramarital Relationships in India</div>
                 <div class="paper-note">Previously titled: Intimacy Contract in Action: How Indian Courts Determine which Extramarital Relationships to Recognize</div>
-                <a href="#" class="abstract-link">[Abstract]</a>
-                <div class="abstract-content">
-                    <p>Many social scientists see the institutionalization of monogamous marriage as promising an egalitarian society. This essay challenges this view by arguing that the institutionalization of monogamy is exclusionary, extending and withholding recognition and entitlements on an ideological basis. I illustrate this argument by analyzing the selective recognition of extramarital relationships across 2,721 Indian appellate court cases from 2000 to 2024. When these relationships resemble the state&rsquo;s ideological vision of monogamous marriage&mdash;a conjugal life, a traditional gender dynamic, and shared religiosity&mdash;courts are almost 35 percentage points more likely to recognize them and extend entitlements (e.g., spousal support, protection against violence) than when these features are absent. The gap highlights that women in comparable circumstances have uneven access to entitlements due to the ideological logic underlying monogamy, a system that excludes even as it promises equality.</p>
+                <div class="paper-meta">
+                    <a href="#" class="abstract-link">Abstract</a><span class="sep">|</span><a href="https://www.chetanasabnis.com/intimacy-contract-jmp.pdf" target="_blank" rel="noopener">Working Paper (Under Review)</a><span class="sep">|</span><a href="https://www.mercatus.org/ideasofindia/chetana-sabnis-intimacy-contract-and-indian-state" target="_blank" rel="noopener">Ideas of India podcast</a>
                 </div>
-                <div class="paper-status">Under Review | <a href="https://www.mercatus.org/ideasofindia/chetana-sabnis-intimacy-contract-and-indian-state">Ideas of India podcast</a></div>
+                <div class="abstract-content">
+                    <p>Many social scientists see the institutionalization of monogamous marriage as promising an egalitarian society. This essay challenges this view by arguing that monogamy is an exclusionary institution, extending and withholding recognition and entitlements on an ideological basis. I demonstrate this argument by analyzing the selective recognition of extramarital relationships across 2,721 Indian appellate court cases from 2000 to 2024. When these relationships resemble the state&rsquo;s ideological vision of monogamous marriage&mdash;a conjugal life, a traditional gender dynamic, and shared religiosity&mdash;courts are almost 35 percentage points more likely to recognize them and extend entitlements (e.g., spousal support, protection against violence) than when these features are absent. This selective recognition has profound consequences for women experiencing abuse or abandonment in extramarital relationships in India today. Those whose relationships fall outside the mold of ideal monogamous marriage can be left with little or no access to state protection, highlighting the exclusionary logic underlying the system of monogamy that, in theory, promises equality.</p>
+                </div>
             </div>
 
             <div class="paper">
-                <div class="paper-title">The Ideal Intensive Caregiver</div>
+                <div class="paper-title">Exploring What Makes a Parent: The Rise of the Intensive Caregiver in U.S. Courts Today</div>
                 <a href="#" class="abstract-link">[Abstract]</a>
                 <div class="abstract-content">
-                    <p>This paper examines when U.S. state appellate courts recognize third-party claimants&mdash;individuals who lack default legal recognition as parents&mdash;seeking rights over a child. Using a dataset of 4,816 U.S. state court cases (2000-2025), I argue that recognition depends on the claimant&rsquo;s alignment with the ideal of the intensive caregiver. Claimants who demonstrate sustained, resource-intensive caregiving are 36 percentage points more likely to be recognized in comparison to a baseline recognition of only 6 percentage points. This standard operates regardless of kinship and gender and holds consistently across states in the country. The force of this ideal is most starkly revealed when third-party claimants oppose biological parents: courts are more likely to recognize third-party claimants when biological parents fall short of intensive caregiving, illustrating that the ideal is as applicable to the latter as it is to the former.</p>
+                    <p>This descriptive inference paper examines the ideological conditions under which individuals are recognized as "parents" in the United States. Existing scholarship argues that parental rights are adjudicated through a pragmatic approach with courts attending to particular caregiving practices rather than abstract ideals of family. Others caution that this approach disadvantages families whose caregiving practices are shaped by structural inequalities. I show that while both perspectives correctly identify caregiving as central, neither captures what judges recognize as constituting caregiving. Drawing on more than 4,000 U.S. state appellate court decisions from the last twenty-five years, I find that individuals who invest substantial time, effort, and material resources in a child are more than 50 percentage points more likely to be recognized as parents even when doing so displaces a biological parent. This standard of caregiving is applied similarly to men and women and to kin and non-kin, suggesting that U.S. courts are governed by an ideology of intensive caregiving that predominantly focuses on the extent to which an individual centers the child.</p>
                 </div>
                 <div class="paper-status">Working Draft</div>
             </div>
 
             <div class="paper">
                 <div class="paper-title">Beyond Pattern Matching: Using Large Language Models to Unlock Court Data</div>
-                <a href="#" class="abstract-link">[Abstract]</a>
+                <div class="paper-meta">
+                    <a href="#" class="abstract-link">Abstract</a><span class="sep">|</span>Working Paper (Under Review)
+                </div>
                 <div class="abstract-content">
                     <p>This article examines the use of large language models (LLMs) to collect and classify information in court data. While computational approaches have traditionally relied on pattern matching techniques, these methods struggle to obtain detailed information from court data. Drawing on projects involving more than 2,700 Indian court cases and 4,800 U.S. state cases, I argue that LLMs offer three advantages over traditional approaches: they can identify concepts from natural language descriptions, synthesize information across complex documents, and lower the technical barriers to large-scale text analysis. I develop a framework to use LLMs effectively so that the model draws on relevant information and produces reliable outputs. In a hand-coding validation of 600 cases, the framework produced classifications that mostly aligned with human coding. The article concludes by discussing the ethical considerations, including environmental costs, research labor implications, and risks of concentrating power within a small number of firms.</p>
                 </div>
-                <div class="paper-status">Under Review | Draft available upon request</div>
             </div>
             </div>
 
@@ -532,7 +545,8 @@
             e.preventDefault();
             const content = link.parentElement.querySelector('.abstract-content');
             content.classList.toggle('show');
-            link.textContent = content.classList.contains('show') ? '[Hide Abstract]' : '[Abstract]';
+            const label = link.textContent.replace(/^Hide /, '');
+            link.textContent = content.classList.contains('show') ? 'Hide ' + label : label;
         });
     });
 
