@@ -457,3 +457,33 @@
         text-decoration: none;
         color: inherit;
     }
+
+/* ---- first paragraph aligns with the top of the photo ---- */
+    .profile-content > p:first-child {
+        margin-top: 0;
+    }
+
+    .last-updated {
+        margin-top: 2.5em;
+        color: #5c4236;
+        font-size: 0.9em;
+    }
+
+/* ---- research page banner ---- */
+    .research-banner {
+        margin: 0 0 2.5em;
+    }
+
+    .research-banner img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .banner-caption {
+        font-size: 0.85em;
+        font-style: italic;
+        color: #5c4236;
+        margin-top: 0.6em;
+    }
